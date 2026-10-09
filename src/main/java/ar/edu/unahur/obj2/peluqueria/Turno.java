@@ -10,4 +10,9 @@ public class Turno {
         throw new UnsupportedOperationException("Unimplemented method 'precioPorCantidad'");
     }
 
+    public Double importeTotal() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'importeTotal'");
+    }
+
 }
