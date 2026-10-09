@@ -6,7 +6,7 @@ public class Frecuente implements Categoria{
 
     @Override
     public Double importeTotal(Turno turno) {
-        return turno.precioPorCantidad() * 0.1;
+        return turno.precioPorCantidad() * 0.9;
     }
 
 }

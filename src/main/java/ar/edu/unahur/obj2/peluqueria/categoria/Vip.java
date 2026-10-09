@@ -6,7 +6,7 @@ public class Vip implements Categoria {
 
     @Override
     public Double importeTotal(Turno turno) {
-        return turno.precioPorCantidad() * 0.2;
+        return turno.precioPorCantidad() * 0.8;
     }
 
 }

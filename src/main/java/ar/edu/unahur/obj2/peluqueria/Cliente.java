@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import ar.edu.unahur.obj2.peluqueria.categoria.Categoria;
 import ar.edu.unahur.obj2.peluqueria.categoria.Vip;
+import ar.edu.unahur.obj2.peluqueria.excepciones.CategoriaNoAutorizadaException;
+import ar.edu.unahur.obj2.peluqueria.excepciones.ClienteSinTurnosException;
 
 public class Cliente {
 
@@ -29,6 +31,9 @@ public class Cliente {
     }
 
     public List<Turno> getHistorialDeTurnos() {
+        if (historialDeTurnos.isEmpty()){
+            throw  new ClienteSinTurnosException ("El historial del cliente esta vacio");
+        }
         return historialDeTurnos;
     }
 

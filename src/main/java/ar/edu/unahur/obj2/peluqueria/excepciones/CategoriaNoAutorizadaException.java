@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.peluqueria;
+package ar.edu.unahur.obj2.peluqueria.excepciones;
 
 /**
  * CategoriaNoAutorizadaException
