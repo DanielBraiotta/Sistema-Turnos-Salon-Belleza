@@ -9,12 +9,14 @@ public class Turno {
     private Servicio servicio;
     private Integer cantidadSeciones;
     private Double importeTotal;
+    private Boolean confirmado;
 
     // constructor---------------
     public Turno(Cliente cliente, Servicio servicio, Integer cantidadSeciones) {
         this.cliente = cliente;
         this.servicio = servicio;
         this.cantidadSeciones = validarCantidadSeciones(cantidadSeciones);
+        this.confirmado = false;
     }
 
     // getters---------------------------
@@ -28,7 +30,7 @@ public class Turno {
         return cantidadSeciones;
     }
     public Double getImporteTotal() {
-        return ImporteTotal;
+        return importeTotal;
     }
 
     // Metodos-----------------------------
@@ -39,22 +41,13 @@ public class Turno {
         return cantidadSeciones;
     }
 
-    public Double precioPorCantidad() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'precioPorCantidad'");
-    }
+    public Double confirmarTurno(RecargoPorInsumos recargoPorInsumos){
 
-
-
-    public Boolean estaConfirmado() {
-        return Boolean.FALSE;
-    }
-
-    public Double confirmarTurno(Cliente cliente, Servicio servicio, 
-        Integer cantidadSeciones){
-
-        this.importeTotal = 1.0;
+            Double precioBase = servicio.getPrecioBase() * cantidadSeciones;
+            Double conDescuentos = cliente.getCategoria().importeTotal(precioBase);
+            this.importeTotal = conDescuentos + recargoPorInsumos.getInsumos();
         
+        this.confirmado = true;
         servicio.restarCantidadDeCupos(cantidadSeciones);
         cliente.agregarAlIstorialCliente(this);
         

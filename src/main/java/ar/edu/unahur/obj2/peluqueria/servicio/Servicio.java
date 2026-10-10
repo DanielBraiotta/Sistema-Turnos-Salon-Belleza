@@ -1,6 +1,5 @@
 package ar.edu.unahur.obj2.peluqueria.servicio;
 
-import ar.edu.unahur.obj2.peluqueria.categoria.Categoria;
 import ar.edu.unahur.obj2.peluqueria.excepciones.PrecioNegativoException;
 
 public abstract class Servicio {

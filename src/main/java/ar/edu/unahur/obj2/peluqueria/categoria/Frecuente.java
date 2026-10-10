@@ -1,12 +1,10 @@
 package ar.edu.unahur.obj2.peluqueria.categoria;
 
-import ar.edu.unahur.obj2.peluqueria.Turno;
-
 public class Frecuente implements Categoria{
 
     @Override
-    public Double importeTotal(Turno turno) {
-        return turno.precioPorCantidad() * 0.9;
+    public Double importeTotal(Double precioBase) {
+        return precioBase * 0.9;
     }
 
 }

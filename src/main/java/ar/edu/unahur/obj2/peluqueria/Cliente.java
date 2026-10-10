@@ -48,7 +48,7 @@ public class Cliente {
     }
 
     public Double costoTotalDeTurnos() {
-        return historialDeTurnos.stream().mapToDouble(p -> p.importeTotal()).sum();
+        return historialDeTurnos.stream().mapToDouble(p -> p.getImporteTotal()).sum();
     }
 
     public Boolean historialVacio() {
